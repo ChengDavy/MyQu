@@ -1,0 +1,53 @@
+//
+//  MyHeader.pch
+//  问卷研学
+//
+//  Created by 程党威 on 2018/3/5.
+//  Copyright © 2018年 程党威. All rights reserved.
+//
+
+#ifndef MyHeader_pch
+#define MyHeader_pch
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "Tools.h"
+////数据库管理
+//#import "JKCoreDataManager.h"
+//数组工具
+#import "NSArray+Extended.h"
+
+#import "NSString+Category.h"
+
+#import "MBProgressHUD.h"
+
+//数据库名
+// 基地
+#import "JKbase.h"
+// 问卷名
+#import "QlistModel.h"
+// 题目表
+#import "QtittleModel.h"
+// 答案表
+#import "QanswerModel.h"
+// 学校表
+#import "SchoolModel.h"
+// 基地表
+#import "JKbase.h"
+// 已答题表
+#import "ResListModel.h"
+// 已答题目表
+#import "RestittleModel.h"
+// 已答答案表
+#import "ResAnswerModel.h"
+
+
+#pragma mark - 全局量
+
+static NSString* USERID = @"USERID";
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* MyHeader_pch */
