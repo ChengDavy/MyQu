@@ -94,7 +94,7 @@
         }]];
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_qTextF becomeFirstResponder];
+            [self->_qTextF becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -123,12 +123,12 @@
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            [[JKCoreDataManager shareInstance]efDeleteQtittleModel: _QtittleModel];
+            [[JKCoreDataManager shareInstance]efDeleteQtittleModel: self->_QtittleModel];
             [self dismissViewControllerAnimated:YES completion:nil];
             
         }]];
         [myAlert addAction:[UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_qTextF becomeFirstResponder];
+            [self->_qTextF becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -173,12 +173,12 @@
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-             [[JKCoreDataManager shareInstance]efDeleteQanswerModel:_editmodel];
+            [[JKCoreDataManager shareInstance]efDeleteQanswerModel:self->_editmodel];
             
         }]];
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_mytextView becomeFirstResponder];
+            [self->_mytextView becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -209,7 +209,7 @@
         }]];
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_mytextView becomeFirstResponder];
+            [self->_mytextView becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -318,11 +318,11 @@
         
         [self showHUDWithStr:@"删除成功"];
         
-        _ListArry = [[[JKCoreDataManager shareInstance]efGetAllQanswerModelWith:_ID]mutableCopy];
+        self->_ListArry = [[[JKCoreDataManager shareInstance]efGetAllQanswerModelWith:self->_ID]mutableCopy];
         
-        for (int i = 0; i < _ListArry.count; i++) {
+        for (int i = 0; i < self->_ListArry.count; i++) {
             
-            QanswerModel * model = [_ListArry objectAtIndex: i ];
+            QanswerModel * model = [self->_ListArry objectAtIndex: i ];
             
             model.qIndex = i + 1;
             

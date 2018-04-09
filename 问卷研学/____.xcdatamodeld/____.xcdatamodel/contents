@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17D47" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="ClassModel" representedClassName="ClassModel" syncable="YES">
+        <attribute name="manager" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="JKbase" representedClassName="JKbase" syncable="YES">
         <attribute name="baseName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="baseNotice" optional="YES" attributeType="String" syncable="YES"/>
@@ -19,6 +26,27 @@
         <attribute name="qMessage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qTittle" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="QobjectModel" representedClassName="QobjectModel" syncable="YES">
+        <attribute name="qBID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qBName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCID1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCID2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCName1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qCName2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qDelete" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="qHidden" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="qID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qQID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qQName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qSID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qSName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qtime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qtime1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qUSE" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="QtittleModel" representedClassName="QtittleModel" syncable="YES">
         <attribute name="qBOOL" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -42,8 +70,11 @@
         <attribute name="qBaseID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qBaseName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qClassID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qClassName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qObjectID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="qObjectName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qQuID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qQuTittle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="qSchoolID" optional="YES" attributeType="String" syncable="YES"/>
@@ -69,12 +100,14 @@
         <attribute name="qSName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ClassModel" positionX="-36" positionY="108" width="128" height="120"/>
         <element name="JKbase" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="QanswerModel" positionX="-18" positionY="36" width="128" height="105"/>
         <element name="QlistModel" positionX="-54" positionY="18" width="128" height="135"/>
+        <element name="QobjectModel" positionX="-27" positionY="117" width="128" height="330"/>
         <element name="QtittleModel" positionX="-36" positionY="27" width="128" height="135"/>
         <element name="ResAnswerModel" positionX="-18" positionY="117" width="128" height="165"/>
-        <element name="ResListModel" positionX="-36" positionY="63" width="128" height="195"/>
+        <element name="ResListModel" positionX="-36" positionY="63" width="128" height="240"/>
         <element name="RestittleModel" positionX="-27" positionY="108" width="128" height="165"/>
         <element name="SchoolModel" positionX="-36" positionY="45" width="128" height="135"/>
     </elements>

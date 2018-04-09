@@ -26,6 +26,7 @@
     [self createData];
     // Do any additional setup after loading the view from its nib.
 }
+//创建数据
 - (void)createData{
     
     _listArry = [[[JKCoreDataManager shareInstance]efGetAllRestittleModelWith:_testId] mutableCopy] ;
@@ -33,14 +34,49 @@
     [_myTableview reloadData];
     
 }
+//创建页面
 - (void)createView{
     [_myTableview registerNib:[UINib nibWithNibName:@"TestTableViewCell" bundle:nil] forCellReuseIdentifier:@"TestTableViewCell"];
     
 }
+//返回
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIAlertController * myalert = [UIAlertController alertControllerWithTitle:@"提醒" message:@"确认返回,是否提交问卷" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [myalert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [myalert addAction:[UIAlertAction actionWithTitle:@"不提交问卷" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }]];
+    [myalert addAction:[UIAlertAction actionWithTitle:@"提交问卷" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self showHUDWithStr:@"提交成功"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }]];
+    [self presentViewController:myalert animated:YES completion:nil];
 }
+//提交问卷
 - (IBAction)updata:(id)sender {
+    
+    UIAlertController * myalert = [UIAlertController alertControllerWithTitle:@"提醒" message:@"确认提交问卷" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [myalert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [myalert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self showHUDWithStr:@"提交成功"];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }]];
+    
+    [self presentViewController:myalert animated:YES completion:nil];
     
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -54,7 +90,9 @@
         NSArray * arry = [[JKCoreDataManager shareInstance]efGetAllResAnswerModelWith:tittleModel.qID];
         return  arry.count;
     }else{
+        
         return 0;
+        
     }
     
 }
@@ -64,7 +102,7 @@
     
     UILabel * label =[[UILabel alloc]initWithFrame:CGRectMake(20, 15, 700, 50)];
     label.numberOfLines=2;
-//    view.backgroundColor = [UIColor clearColor];
+
     view.backgroundColor = UIColorFromRGB(0xe5e5e5);
     
     [view addSubview:label];

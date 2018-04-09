@@ -10,6 +10,7 @@
 #import "SchoolMViewController.h"
 #import "BaseMViewController.h"
 
+
 @interface OrgMViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *schoolM;
 

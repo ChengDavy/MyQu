@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OmanagerViewController">
+            <connections>
+                <outlet property="myTableview" destination="hOX-z2-4o8" id="OcG-T7-sc4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzX-A7-pKz">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNe-zk-dEQ">
+                            <rect key="frame" x="662" y="19" width="100" height="39"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="39" id="JIp-WZ-tcd"/>
+                                <constraint firstAttribute="width" constant="100" id="Jvc-Ed-ulg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <state key="normal" title="新增项目">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="addObject:" destination="-1" eventType="touchUpInside" id="ZaX-JG-c5y"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLH-MZ-WwB">
+                            <rect key="frame" x="10" y="24" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="VfS-gN-gW3"/>
+                                <constraint firstAttribute="height" constant="30" id="zuj-k7-IhI"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="back.png"/>
+                            <connections>
+                                <action selector="back:" destination="-1" eventType="touchUpInside" id="lIq-0C-ors"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="项目管理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frT-Gw-IU6">
+                            <rect key="frame" x="278" y="28" width="213" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="F7Z-35-4V8"/>
+                                <constraint firstAttribute="width" constant="213" id="vCe-4X-tY0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.43555021290000001" green="0.58940380810000004" blue="0.1140273884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="UNe-zk-dEQ" firstAttribute="top" secondItem="gzX-A7-pKz" secondAttribute="top" constant="19" id="DNw-ZT-dg6"/>
+                        <constraint firstItem="JLH-MZ-WwB" firstAttribute="top" secondItem="gzX-A7-pKz" secondAttribute="top" constant="24" id="EdO-jh-k32"/>
+                        <constraint firstAttribute="trailing" secondItem="UNe-zk-dEQ" secondAttribute="trailing" constant="6" id="YhI-BI-DV5"/>
+                        <constraint firstItem="JLH-MZ-WwB" firstAttribute="leading" secondItem="gzX-A7-pKz" secondAttribute="leading" constant="10" id="a0B-qG-dGO"/>
+                        <constraint firstAttribute="height" constant="64" id="hCQ-Jq-5zW"/>
+                        <constraint firstItem="frT-Gw-IU6" firstAttribute="top" secondItem="gzX-A7-pKz" secondAttribute="top" constant="28" id="hb4-Dc-JC9"/>
+                        <constraint firstItem="frT-Gw-IU6" firstAttribute="leading" secondItem="JLH-MZ-WwB" secondAttribute="trailing" constant="238" id="qzF-n5-pKd"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hOX-z2-4o8">
+                    <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="3S4-nC-R31"/>
+                        <outlet property="delegate" destination="-1" id="r6p-yT-aby"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="gzX-A7-pKz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="AFf-7e-UJr"/>
+                <constraint firstItem="hOX-z2-4o8" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="B00-IZ-zRU"/>
+                <constraint firstItem="gzX-A7-pKz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Otp-Sg-gWF"/>
+                <constraint firstItem="hOX-z2-4o8" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="Zaz-7c-dwH"/>
+                <constraint firstItem="hOX-z2-4o8" firstAttribute="top" secondItem="gzX-A7-pKz" secondAttribute="bottom" id="fPV-ez-s4g"/>
+                <constraint firstItem="gzX-A7-pKz" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="v8h-g3-dxs"/>
+                <constraint firstItem="hOX-z2-4o8" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="x2z-vN-eyq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back.png" width="20" height="20"/>
+    </resources>
+</document>

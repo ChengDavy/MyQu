@@ -781,6 +781,7 @@ static JKCoreDataManager * _coreData = nil;
 -(NSMutableArray*)efGetAllResListModel{
     
     NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KResListModel sortByKey:nil];
+    
     return ModelArr;
 }
 
@@ -824,6 +825,37 @@ static JKCoreDataManager * _coreData = nil;
     //    返回
     return modelArr;
     
+}
+
+
+//@property (nullable, nonatomic, copy) NSString *qID;
+//@property (nullable, nonatomic, copy) NSString *qName;
+//@property (nullable, nonatomic, copy) NSString *qSchoolTittle;
+//@property (nullable, nonatomic, copy) NSString *qSchoolID;
+//@property (nullable, nonatomic, copy) NSString *qBaseID;
+//@property (nullable, nonatomic, copy) NSString *qBaseName;
+//@property (nullable, nonatomic, copy) NSString *qQuTittle;
+//@property (nullable, nonatomic, copy) NSString *qQuID;
+//@property (nullable, nonatomic, copy) NSString *qClassID;
+//@property (nullable, nonatomic, copy) NSString *qClassName;
+//@property (nullable, nonatomic, copy) NSString *qObjectID;
+//@property (nullable, nonatomic, copy) NSString *qObjectName;
+//@property (nullable, nonatomic, copy) NSDate *qTime;
+/**
+ *  筛选查询
+ *  @ 查询字段  base   school  class  object
+ *  @ return
+ */
+
+-(NSMutableArray *)efSearchAllResListModelWithBaseID:(NSString*)baseID SchoolID:(NSString*)schoolID ClassID:(NSString*)classID ObjectID:(NSString*)objectID{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"(qBaseID LIKE '*%@*' and qSchoolID LIKE '*%@*' and qClassID LIKE '*%@*' and qObjectID LIKE '*%@*') ",baseID,schoolID,classID,objectID];
+    
+    NSLog(@"conditionStr  %@",conditionStr);
+    
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KResListModel condition:conditionStr sortByKey:@"qTime" limit:10000 ascending:YES];
+    
+    return modelArr;
 }
 
 /**
@@ -1194,6 +1226,394 @@ static JKCoreDataManager * _coreData = nil;
     return flag;
 }
 
+#pragma mark - 班级表
+
+//==============================================================================
+/*班级表*/
+//==============================================================================
+/**
+ *  创建班级表信息
+ *
+ *  @return ClassModel
+ */
+-(ClassModel*)efCreateClassModel{
+    //    创建新表
+    ClassModel * model = (ClassModel*)[[CoreDataManager shareInstance] CreateObjectWithTable:KClassModel];
+    return  model;
+}
+/**
+ *  获取所有班级表
+ *
+ *  @return studentModel
+ */
+-(NSMutableArray*)efGetAllClassModel{
+    
+    NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KClassModel sortByKey:nil];
+    return ModelArr;
+}
+
+/**
+ *  添加班级表到数据库
+ *
+ */
+
+-(BOOL)efAddClassModel:(ClassModel *)jClassModel{
+    
+    BOOL isSuccess = NO;
+    
+    ClassModel * model = [self efGetClassModelWithClassModelId:jClassModel.qID];
+    
+    if (jClassModel) {
+        
+        if (!(jClassModel == model)) {
+            
+            [self efDeleteClassModel:model];
+            
+            model = jClassModel;
+        }
+    }
+    isSuccess = [[CoreDataManager shareInstance] saveContext];
+    
+    //    NSLog( @ "%@ ",isSuccess?@"成功":@"失败");
+    return isSuccess;
+    
+}
+
+/**
+ *  根据班级表ID获取班级表
+ *  @ 班级表ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllClassModelWith:(NSString*)modelId{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"sID = '%@'",modelId];
+    //    查询
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KClassModel condition:conditionStr sortByKey:nil limit:100 ascending:YES];
+    //    返回
+    return modelArr;
+    
+}
+
+/**
+ *  模糊查询
+ *  @ 模糊查询字段
+ *  @ return
+ */
+
+-(NSMutableArray *)efSearchAllClassModelWithsearchText:(NSString*)searchText{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"(qTittle LIKE '*%@*' or qDate LIKE '*%@*' or qUser LIKE '*%@*') ",searchText,searchText,searchText];
+    
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KClassModel condition:conditionStr sortByKey:@"testBeginTime" limit:100 ascending:YES];
+    
+    return modelArr;
+}
+
+/**
+ *  根据ClassModelID获取ClassModel信息
+ *
+ *  @ ClassModelId
+ *
+ *  @ return
+ */
+
+-(ClassModel *)efGetClassModelWithClassModelId:(NSString *)modelId{
+    
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KClassModel condition:[NSString stringWithFormat:@"qID LIKE '%@' ",modelId] sortByKey:nil];
+    
+    if (modelArr.count > 0) {
+        ClassModel *model = [modelArr objectAtIndexWithSafety:0];
+        return model;
+    }
+    return [self efCreateClassModel];
+}
+
+/**
+ *  删除班级表信息
+ *
+ *  @ param ClassModel
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteClassModel:(ClassModel *)jClassModel{
+    
+    return  [[CoreDataManager shareInstance] deleteWithObject:jClassModel];
+    
+}
+
+/**
+ *  更新班级表信息
+ *
+ *  @ param ClassModel
+ *
+ *  @ return
+ */
+-(BOOL)efUpdateClassModel:(ClassModel *)jClassModel{
+    
+    return  [self efAddClassModel:jClassModel];
+    
+}
+
+/**
+ *  清空所有班级表
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteAllClassModel{
+    
+    BOOL flag = YES;
+    for (ClassModel * model in [self efGetAllClassModel]) {
+        
+        if (![self efDeleteClassModel:model]) {
+            flag = NO;
+        }
+    }
+    return flag;
+}
+
+#pragma mark - 项目表
+
+//==============================================================================
+/*项目表*/
+//==============================================================================
+/**
+ *  创建项目表信息
+ *
+ *  @return QobjectModel
+ */
+-(QobjectModel*)efCreateQobjectModel{
+    //    创建新表
+    QobjectModel * model = (QobjectModel*)[[CoreDataManager shareInstance] CreateObjectWithTable:KQobjectModel];
+    return  model;
+}
+/**
+ *  获取所有项目表
+ *
+ *  @return studentModel
+ */
+-(NSMutableArray*)efGetAllQobjectModel{
+    
+    NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel sortByKey:nil];
+    return ModelArr;
+}
+
+/**
+ *  添加项目表到数据库
+ *
+ */
+
+-(BOOL)efAddQobjectModel:(QobjectModel *)jQobjectModel{
+    
+    BOOL isSuccess = NO;
+    
+    QobjectModel * model = [self efGetQobjectModelWithQobjectModelId:jQobjectModel.qID];
+    
+    if (jQobjectModel) {
+        
+        if (!(jQobjectModel == model)) {
+            
+            [self efDeleteQobjectModel:model];
+            
+            model = jQobjectModel;
+        }
+    }
+    isSuccess = [[CoreDataManager shareInstance] saveContext];
+    
+    //    NSLog( @ "%@ ",isSuccess?@"成功":@"失败");
+    return isSuccess;
+    
+}
+
+/**
+ *  根据班级ID获取项目表
+ *  @ 班级ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithClassId:(NSString*)ClassId{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"qCID1 = '%@' or qCID2 = '%@' or qCID = '%@'",ClassId,ClassId,ClassId];
+    //    查询
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:nil limit:1000 ascending:YES];
+    //    返回
+    return modelArr;
+}
+
+
+/**
+ *  根据项目表ID获取项目表
+ *  @ 项目表ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWith:(NSString*)modelId{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"qTittleID = '%@'",modelId];
+    //    查询
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:nil limit:100 ascending:YES];
+    //    返回
+    return modelArr;
+}
+
+/**
+ *  根据项目表ID获取是否使用项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithqUSE:(BOOL)use{
+    
+    NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel sortByKey:nil];
+    
+    NSMutableArray * modelArr = [[NSMutableArray alloc]init];
+    
+    for (QobjectModel * model in ModelArr) {
+        
+        if (model.qUSE == use) {
+            [modelArr addObject:model];
+        }
+    }
+    
+    
+    //    //sql
+    //    NSString *conditionStr = [NSString stringWithFormat:@"qHidden = '%@'and qDelete = '%@'and qUSE = '%@' ",hidden,delete,use ];
+    //    //    查询
+    //    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:nil limit:100 ascending:YES];
+    //    返回
+    return modelArr;
+    
+}
+
+/**
+ *  根据项目表ID获取是否隐藏项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithHidden:(BOOL)hidden{
+
+    NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel sortByKey:nil];
+
+    NSMutableArray * modelArr = [[NSMutableArray alloc]init];
+    
+    for (QobjectModel * model in ModelArr) {
+        
+        if (model.qHidden == hidden ) {
+            [modelArr addObject:model];
+        }
+    }
+    
+    
+//    //sql
+//    NSString *conditionStr = [NSString stringWithFormat:@"qHidden = '%@'and qDelete = '%@'and qUSE = '%@' ",hidden,delete,use ];
+//    //    查询
+//    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:nil limit:100 ascending:YES];
+    //    返回
+    return modelArr;
+    
+}
+
+/**
+ *  根据项目表ID获取未是否删除项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithDelete:(BOOL)isdelete {
+    
+    NSMutableArray *ModelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel sortByKey:nil];
+    
+    NSMutableArray * modelArr = [[NSMutableArray alloc]init];
+    
+    for (QobjectModel * model in ModelArr) {
+        
+        if (model.qDelete == isdelete ) {
+            
+            [modelArr addObject:model];
+        }
+    }
+    
+    
+    //    //sql
+    //    NSString *conditionStr = [NSString stringWithFormat:@"qHidden = '%@'and qDelete = '%@'and qUSE = '%@' ",hidden,delete,use ];
+    //    //    查询
+    //    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:nil limit:100 ascending:YES];
+    //    返回
+    return modelArr;
+    
+}
+
+/**
+ *  模糊查询
+ *  @ 模糊查询字段
+ *  @ return
+ */
+
+-(NSMutableArray *)efSearchAllQobjectModelWithsearchText:(NSString*)searchText{
+    //sql
+    NSString *conditionStr = [NSString stringWithFormat:@"(qTittle LIKE '*%@*' or qDate LIKE '*%@*' or qUser LIKE '*%@*') ",searchText,searchText,searchText];
+    
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:conditionStr sortByKey:@"testBeginTime" limit:100 ascending:YES];
+    
+    return modelArr;
+}
+
+/**
+ *  根据QobjectModelID获取QobjectModel信息
+ *
+ *  @ QobjectModelId
+ *
+ *  @ return
+ */
+
+-(QobjectModel *)efGetQobjectModelWithQobjectModelId:(NSString *)modelId{
+    
+    NSMutableArray *modelArr = [[CoreDataManager shareInstance] QueryObjectsWithTable:KQobjectModel condition:[NSString stringWithFormat:@"qID LIKE '%@' ",modelId] sortByKey:nil];
+    
+    if (modelArr.count > 0) {
+        QobjectModel *model = [modelArr objectAtIndexWithSafety:0];
+        return model;
+    }
+    return [self efCreateQobjectModel];
+}
+
+/**
+ *  删除项目表信息
+ *
+ *  @ param QobjectModel
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteQobjectModel:(QobjectModel *)jQobjectModel{
+    
+    return  [[CoreDataManager shareInstance] deleteWithObject:jQobjectModel];
+    
+}
+
+/**
+ *  更新项目表信息
+ *
+ *  @ param QobjectModel
+ *
+ *  @ return
+ */
+-(BOOL)efUpdateQobjectModel:(QobjectModel *)jQobjectModel{
+    
+    return  [self efAddQobjectModel:jQobjectModel];
+    
+}
+
+/**
+ *  清空所有项目表
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteAllQobjectModel{
+    
+    BOOL flag = YES;
+    for (QobjectModel * model in [self efGetAllQobjectModel]) {
+        
+        if (![self efDeleteQobjectModel:model]) {
+            flag = NO;
+        }
+    }
+    return flag;
+}
 
 
 @end

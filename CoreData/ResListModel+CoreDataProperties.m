@@ -25,5 +25,9 @@
 @dynamic qQuID;
 @dynamic qTime;
 @dynamic qClassID;
+//@dynamic qClassName;
+@dynamic qClassName;
+@dynamic qObjectID;
+@dynamic qObjectName;
 
 @end

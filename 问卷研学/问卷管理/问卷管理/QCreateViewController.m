@@ -83,13 +83,13 @@
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            [[JKCoreDataManager shareInstance]efDeleteQlistModel:_listModel];
+            [[JKCoreDataManager shareInstance]efDeleteQlistModel:self->_listModel];
             [self dismissViewControllerAnimated:YES completion:nil];
        
         }]];
         
         [myAlert addAction:[UIAlertAction actionWithTitle:@"编辑" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_tittle becomeFirstResponder];
+            [self->_tittle becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -114,7 +114,7 @@
        
         }]];
         [myAlert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [_tittle becomeFirstResponder];
+            [self->_tittle becomeFirstResponder];
         }]];
         
         [self presentViewController:myAlert animated:YES completion:nil];
@@ -241,11 +241,11 @@
         
         [self showHUDWithStr:@"删除成功"];
         
-        _QTlistArry = [[[JKCoreDataManager shareInstance]efGetAllQtittleModelWith:_ID]mutableCopy];
+        self->_QTlistArry = [[[JKCoreDataManager shareInstance]efGetAllQtittleModelWith:self->_ID]mutableCopy];
         
-        for (int i = 0; i < _QTlistArry.count; i++) {
+        for (int i = 0; i < self->_QTlistArry.count; i++) {
             
-            QtittleModel * model = [_QTlistArry objectAtIndex: i ];
+            QtittleModel * model = [self->_QTlistArry objectAtIndex: i ];
             
             model.qNumber = i + 1;
             

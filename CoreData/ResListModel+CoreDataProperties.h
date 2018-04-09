@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *qQuTittle;
 @property (nullable, nonatomic, copy) NSString *qQuID;
 @property (nullable, nonatomic, copy) NSString *qClassID;
+@property (nullable, nonatomic, copy) NSString *qClassName;
+@property (nullable, nonatomic, copy) NSString *qObjectID;
+@property (nullable, nonatomic, copy) NSString *qObjectName;
 @property (nullable, nonatomic, copy) NSDate *qTime;
 
 @end

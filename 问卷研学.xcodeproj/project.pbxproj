@@ -19,6 +19,35 @@
 		46043241205694C700F0B627 /* TestingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4604323F205694C700F0B627 /* TestingViewController.xib */; };
 		4604324620576BED00F0B627 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4604324420576BED00F0B627 /* TestTableViewCell.m */; };
 		4604324720576BED00F0B627 /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4604324520576BED00F0B627 /* TestTableViewCell.xib */; };
+		4644387F20739BB700EA47F4 /* OeditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4644387E20739BB700EA47F4 /* OeditViewController.xib */; };
+		4644388220739E9000EA47F4 /* OeditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644388120739E9000EA47F4 /* OeditViewController.m */; };
+		464438882074CC8A00EA47F4 /* MyTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 464438852074CC8900EA47F4 /* MyTool.m */; };
+		4644388D2079BAEB00EA47F4 /* studentSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644388B2079BAEB00EA47F4 /* studentSetViewController.m */; };
+		4644388E2079BAEB00EA47F4 /* studentSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4644388C2079BAEB00EA47F4 /* studentSetViewController.xib */; };
+		46443892207A265100EA47F4 /* MCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46443890207A265100EA47F4 /* MCountViewController.m */; };
+		46443893207A265100EA47F4 /* MCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46443891207A265100EA47F4 /* MCountViewController.xib */; };
+		46443897207B509F00EA47F4 /* schoolCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46443895207B509F00EA47F4 /* schoolCountViewController.m */; };
+		46443898207B509F00EA47F4 /* schoolCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46443896207B509F00EA47F4 /* schoolCountViewController.xib */; };
+		4644389C207B50C100EA47F4 /* BaseCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644389A207B50C100EA47F4 /* BaseCountViewController.m */; };
+		4644389D207B50C100EA47F4 /* BaseCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4644389B207B50C100EA47F4 /* BaseCountViewController.xib */; };
+		464438A1207B50E800EA47F4 /* objectCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4644389F207B50E800EA47F4 /* objectCountViewController.m */; };
+		464438A2207B50E800EA47F4 /* objectCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464438A0207B50E800EA47F4 /* objectCountViewController.xib */; };
+		464438A7207B517100EA47F4 /* MCTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 464438A5207B517100EA47F4 /* MCTableViewCell.m */; };
+		464438A8207B517100EA47F4 /* MCTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464438A6207B517100EA47F4 /* MCTableViewCell.xib */; };
+		4656047B2072171200567751 /* schoolTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 465604792072171200567751 /* schoolTableViewCell.m */; };
+		4656047C2072171200567751 /* schoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656047A2072171200567751 /* schoolTableViewCell.xib */; };
+		4656048020721FB500567751 /* classViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656047E20721FB500567751 /* classViewController.m */; };
+		4656048120721FB500567751 /* classViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656047F20721FB500567751 /* classViewController.xib */; };
+		4656048620722A4500567751 /* ClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656048420722A4500567751 /* ClassModel.m */; };
+		4656048720722A4500567751 /* ClassModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656048520722A4500567751 /* ClassModel+CoreDataProperties.m */; };
+		4656048B20723D7A00567751 /* TestManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656048920723D7A00567751 /* TestManagerViewController.m */; };
+		4656048C20723D7A00567751 /* TestManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656048A20723D7A00567751 /* TestManagerViewController.xib */; };
+		465604902073281A00567751 /* objectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656048E2073281A00567751 /* objectTableViewCell.m */; };
+		465604912073281A00567751 /* objectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656048F2073281A00567751 /* objectTableViewCell.xib */; };
+		4656049520734A7800567751 /* OmanagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656049320734A7800567751 /* OmanagerViewController.m */; };
+		4656049620734A7800567751 /* OmanagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656049420734A7800567751 /* OmanagerViewController.xib */; };
+		4656049B2073778300567751 /* QobjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 465604992073778300567751 /* QobjectModel.m */; };
+		4656049C2073778300567751 /* QobjectModel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656049A2073778300567751 /* QobjectModel+CoreDataProperties.m */; };
 		46CC3942206A2080007AD5F1 /* choiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CC3940206A2080007AD5F1 /* choiceTableViewCell.m */; };
 		46CC3943206A2080007AD5F1 /* choiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC3941206A2080007AD5F1 /* choiceTableViewCell.xib */; };
 		46CC3947206A4CB3007AD5F1 /* countViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CC3945206A4CB3007AD5F1 /* countViewController.m */; };
@@ -122,6 +151,53 @@
 		4604324320576BED00F0B627 /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
 		4604324420576BED00F0B627 /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		4604324520576BED00F0B627 /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
+		4644387E20739BB700EA47F4 /* OeditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OeditViewController.xib; sourceTree = "<group>"; };
+		4644388020739E8F00EA47F4 /* OeditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OeditViewController.h; sourceTree = "<group>"; };
+		4644388120739E9000EA47F4 /* OeditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OeditViewController.m; sourceTree = "<group>"; };
+		464438842074CC8900EA47F4 /* MyTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTool.h; sourceTree = "<group>"; };
+		464438852074CC8900EA47F4 /* MyTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTool.m; sourceTree = "<group>"; };
+		464438892074CF6F00EA47F4 /* DefineUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineUtils.h; sourceTree = "<group>"; };
+		4644388A2079BAEB00EA47F4 /* studentSetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = studentSetViewController.h; sourceTree = "<group>"; };
+		4644388B2079BAEB00EA47F4 /* studentSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = studentSetViewController.m; sourceTree = "<group>"; };
+		4644388C2079BAEB00EA47F4 /* studentSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = studentSetViewController.xib; sourceTree = "<group>"; };
+		4644388F207A265100EA47F4 /* MCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCountViewController.h; sourceTree = "<group>"; };
+		46443890207A265100EA47F4 /* MCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCountViewController.m; sourceTree = "<group>"; };
+		46443891207A265100EA47F4 /* MCountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCountViewController.xib; sourceTree = "<group>"; };
+		46443894207B509F00EA47F4 /* schoolCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = schoolCountViewController.h; sourceTree = "<group>"; };
+		46443895207B509F00EA47F4 /* schoolCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = schoolCountViewController.m; sourceTree = "<group>"; };
+		46443896207B509F00EA47F4 /* schoolCountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = schoolCountViewController.xib; sourceTree = "<group>"; };
+		46443899207B50C100EA47F4 /* BaseCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCountViewController.h; sourceTree = "<group>"; };
+		4644389A207B50C100EA47F4 /* BaseCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCountViewController.m; sourceTree = "<group>"; };
+		4644389B207B50C100EA47F4 /* BaseCountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseCountViewController.xib; sourceTree = "<group>"; };
+		4644389E207B50E800EA47F4 /* objectCountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objectCountViewController.h; sourceTree = "<group>"; };
+		4644389F207B50E800EA47F4 /* objectCountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objectCountViewController.m; sourceTree = "<group>"; };
+		464438A0207B50E800EA47F4 /* objectCountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = objectCountViewController.xib; sourceTree = "<group>"; };
+		464438A4207B517100EA47F4 /* MCTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTableViewCell.h; sourceTree = "<group>"; };
+		464438A5207B517100EA47F4 /* MCTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTableViewCell.m; sourceTree = "<group>"; };
+		464438A6207B517100EA47F4 /* MCTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MCTableViewCell.xib; sourceTree = "<group>"; };
+		465604782072171200567751 /* schoolTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = schoolTableViewCell.h; sourceTree = "<group>"; };
+		465604792072171200567751 /* schoolTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = schoolTableViewCell.m; sourceTree = "<group>"; };
+		4656047A2072171200567751 /* schoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = schoolTableViewCell.xib; sourceTree = "<group>"; };
+		4656047D20721FB500567751 /* classViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = classViewController.h; sourceTree = "<group>"; };
+		4656047E20721FB500567751 /* classViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = classViewController.m; sourceTree = "<group>"; };
+		4656047F20721FB500567751 /* classViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = classViewController.xib; sourceTree = "<group>"; };
+		4656048220722A4500567751 /* ClassModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClassModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4656048320722A4500567751 /* ClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassModel.h; sourceTree = "<group>"; };
+		4656048420722A4500567751 /* ClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassModel.m; sourceTree = "<group>"; };
+		4656048520722A4500567751 /* ClassModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ClassModel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4656048820723D7A00567751 /* TestManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestManagerViewController.h; sourceTree = "<group>"; };
+		4656048920723D7A00567751 /* TestManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestManagerViewController.m; sourceTree = "<group>"; };
+		4656048A20723D7A00567751 /* TestManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestManagerViewController.xib; sourceTree = "<group>"; };
+		4656048D2073281A00567751 /* objectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objectTableViewCell.h; sourceTree = "<group>"; };
+		4656048E2073281A00567751 /* objectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objectTableViewCell.m; sourceTree = "<group>"; };
+		4656048F2073281A00567751 /* objectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = objectTableViewCell.xib; sourceTree = "<group>"; };
+		4656049220734A7800567751 /* OmanagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OmanagerViewController.h; sourceTree = "<group>"; };
+		4656049320734A7800567751 /* OmanagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OmanagerViewController.m; sourceTree = "<group>"; };
+		4656049420734A7800567751 /* OmanagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OmanagerViewController.xib; sourceTree = "<group>"; };
+		465604972073778300567751 /* QobjectModel+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QobjectModel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		465604982073778300567751 /* QobjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QobjectModel.h; sourceTree = "<group>"; };
+		465604992073778300567751 /* QobjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QobjectModel.m; sourceTree = "<group>"; };
+		4656049A2073778300567751 /* QobjectModel+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "QobjectModel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		46CC393F206A2080007AD5F1 /* choiceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = choiceTableViewCell.h; sourceTree = "<group>"; };
 		46CC3940206A2080007AD5F1 /* choiceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = choiceTableViewCell.m; sourceTree = "<group>"; };
 		46CC3941206A2080007AD5F1 /* choiceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = choiceTableViewCell.xib; sourceTree = "<group>"; };
@@ -256,6 +332,19 @@
 				4604324320576BED00F0B627 /* TestTableViewCell.h */,
 				4604324420576BED00F0B627 /* TestTableViewCell.m */,
 				4604324520576BED00F0B627 /* TestTableViewCell.xib */,
+				4656048D2073281A00567751 /* objectTableViewCell.h */,
+				4656048E2073281A00567751 /* objectTableViewCell.m */,
+				4656048F2073281A00567751 /* objectTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		464438A3207B50EE00EA47F4 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				464438A4207B517100EA47F4 /* MCTableViewCell.h */,
+				464438A5207B517100EA47F4 /* MCTableViewCell.m */,
+				464438A6207B517100EA47F4 /* MCTableViewCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -361,9 +450,21 @@
 				46043226205256BB00F0B627 /* BeginAnViewController.h */,
 				46043227205256BB00F0B627 /* BeginAnViewController.m */,
 				46043228205256BB00F0B627 /* BeginAnViewController.xib */,
+				4644388A2079BAEB00EA47F4 /* studentSetViewController.h */,
+				4644388B2079BAEB00EA47F4 /* studentSetViewController.m */,
+				4644388C2079BAEB00EA47F4 /* studentSetViewController.xib */,
 				4604323D205694C700F0B627 /* TestingViewController.h */,
 				4604323E205694C700F0B627 /* TestingViewController.m */,
 				4604323F205694C700F0B627 /* TestingViewController.xib */,
+				4656048820723D7A00567751 /* TestManagerViewController.h */,
+				4656048920723D7A00567751 /* TestManagerViewController.m */,
+				4656048A20723D7A00567751 /* TestManagerViewController.xib */,
+				4656049220734A7800567751 /* OmanagerViewController.h */,
+				4656049320734A7800567751 /* OmanagerViewController.m */,
+				4656049420734A7800567751 /* OmanagerViewController.xib */,
+				4644388020739E8F00EA47F4 /* OeditViewController.h */,
+				4644388120739E9000EA47F4 /* OeditViewController.m */,
+				4644387E20739BB700EA47F4 /* OeditViewController.xib */,
 			);
 			path = "答题";
 			sourceTree = "<group>";
@@ -415,6 +516,14 @@
 		46D0D43A204D614500AC1E8B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				465604982073778300567751 /* QobjectModel.h */,
+				465604992073778300567751 /* QobjectModel.m */,
+				465604972073778300567751 /* QobjectModel+CoreDataProperties.h */,
+				4656049A2073778300567751 /* QobjectModel+CoreDataProperties.m */,
+				4656048320722A4500567751 /* ClassModel.h */,
+				4656048420722A4500567751 /* ClassModel.m */,
+				4656048220722A4500567751 /* ClassModel+CoreDataProperties.h */,
+				4656048520722A4500567751 /* ClassModel+CoreDataProperties.m */,
 				4604323220565D3B00F0B627 /* RestittleModel.h */,
 				4604323320565D3B00F0B627 /* RestittleModel.m */,
 				4604323120565D3B00F0B627 /* RestittleModel+CoreDataProperties.h */,
@@ -460,6 +569,9 @@
 				46D0D470204E8D9D00AC1E8B /* JSON+Helpers.m */,
 				46D0D494204E99E200AC1E8B /* NSString+Category.h */,
 				46D0D493204E99E200AC1E8B /* NSString+Category.m */,
+				464438892074CF6F00EA47F4 /* DefineUtils.h */,
+				464438842074CC8900EA47F4 /* MyTool.h */,
+				464438852074CC8900EA47F4 /* MyTool.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -487,9 +599,22 @@
 		46D0D497204E9CC000AC1E8B /* 问卷统计 */ = {
 			isa = PBXGroup;
 			children = (
+				464438A3207B50EE00EA47F4 /* cell */,
 				46CC3944206A4CB3007AD5F1 /* countViewController.h */,
 				46CC3945206A4CB3007AD5F1 /* countViewController.m */,
 				46CC3946206A4CB3007AD5F1 /* countViewController.xib */,
+				4644388F207A265100EA47F4 /* MCountViewController.h */,
+				46443890207A265100EA47F4 /* MCountViewController.m */,
+				46443891207A265100EA47F4 /* MCountViewController.xib */,
+				46443894207B509F00EA47F4 /* schoolCountViewController.h */,
+				46443895207B509F00EA47F4 /* schoolCountViewController.m */,
+				46443896207B509F00EA47F4 /* schoolCountViewController.xib */,
+				46443899207B50C100EA47F4 /* BaseCountViewController.h */,
+				4644389A207B50C100EA47F4 /* BaseCountViewController.m */,
+				4644389B207B50C100EA47F4 /* BaseCountViewController.xib */,
+				4644389E207B50E800EA47F4 /* objectCountViewController.h */,
+				4644389F207B50E800EA47F4 /* objectCountViewController.m */,
+				464438A0207B50E800EA47F4 /* objectCountViewController.xib */,
 			);
 			path = "问卷统计";
 			sourceTree = "<group>";
@@ -513,6 +638,12 @@
 				46E71523204FFF72009C8554 /* SchoolMViewController.h */,
 				46E71524204FFF72009C8554 /* SchoolMViewController.m */,
 				46E71525204FFF72009C8554 /* SchoolMViewController.xib */,
+				465604782072171200567751 /* schoolTableViewCell.h */,
+				465604792072171200567751 /* schoolTableViewCell.m */,
+				4656047A2072171200567751 /* schoolTableViewCell.xib */,
+				4656047D20721FB500567751 /* classViewController.h */,
+				4656047E20721FB500567751 /* classViewController.m */,
+				4656047F20721FB500567751 /* classViewController.xib */,
 			);
 			path = "学校管理";
 			sourceTree = "<group>";
@@ -600,7 +731,7 @@
 		46D0D3D1204D1D6200AC1E8B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "程党威";
 				TargetAttributes = {
 					46D0D3D8204D1D6200AC1E8B = {
@@ -647,14 +778,20 @@
 				46D0D3EC204D1D6200AC1E8B /* LaunchScreen.storyboard in Resources */,
 				46D0D42D204D454100AC1E8B /* btn_purchase_icon_ipad@2x.png in Resources */,
 				46D0D460204E754700AC1E8B /* icon_next_ip6@2x.png in Resources */,
+				46443898207B509F00EA47F4 /* schoolCountViewController.xib in Resources */,
 				46D0D425204D40AB00AC1E8B /* btn_practice_icon_ipad@2x.png in Resources */,
+				4656048C20723D7A00567751 /* TestManagerViewController.xib in Resources */,
 				46D0D3E9204D1D6200AC1E8B /* Assets.xcassets in Resources */,
+				46443893207A265100EA47F4 /* MCountViewController.xib in Resources */,
 				46D0D459204E45DB00AC1E8B /* QMListViewController.xib in Resources */,
+				4656049620734A7800567751 /* OmanagerViewController.xib in Resources */,
 				46D0D435204D46E400AC1E8B /* btn_purchase@2x.png in Resources */,
 				46D0D454204E451B00AC1E8B /* back@2x.png in Resources */,
 				46E71520204FFA88009C8554 /* OrgMViewController.xib in Resources */,
 				46D0D4B3204EE15D00AC1E8B /* QeditAViewController.xib in Resources */,
 				46D0D42B204D453300AC1E8B /* btn_purchase_icon@2x.png in Resources */,
+				464438A8207B517100EA47F4 /* MCTableViewCell.xib in Resources */,
+				4644388E2079BAEB00EA47F4 /* studentSetViewController.xib in Resources */,
 				46D0D450204E39F500AC1E8B /* QManagerViewController.xib in Resources */,
 				46CC3948206A4CB3007AD5F1 /* countViewController.xib in Resources */,
 				46E7152C204FFFE0009C8554 /* BaseMViewController.xib in Resources */,
@@ -662,16 +799,22 @@
 				46D0D439204D521200AC1E8B /* icon_about_white_ipad@2x.png in Resources */,
 				46D0D420204D3E8400AC1E8B /* JKMainViewController.xib in Resources */,
 				46D0D49C204E9D7500AC1E8B /* QCreateViewController.xib in Resources */,
+				4644389D207B50C100EA47F4 /* BaseCountViewController.xib in Resources */,
+				4656047C2072171200567751 /* schoolTableViewCell.xib in Resources */,
 				46D0D452204E3C3800AC1E8B /* bg_button_selected.png in Resources */,
 				46CC3943206A2080007AD5F1 /* choiceTableViewCell.xib in Resources */,
 				46D0D431204D456100AC1E8B /* btn_test@2x.png in Resources */,
+				464438A2207B50E800EA47F4 /* objectCountViewController.xib in Resources */,
 				46D0D45E204E73E200AC1E8B /* QMlistTableViewCell.xib in Resources */,
 				46D0D433204D45E600AC1E8B /* btn_settings_white_ipad@2x.png in Resources */,
 				46D0D429204D413E00AC1E8B /* btn_practice@2x.png in Resources */,
+				465604912073281A00567751 /* objectTableViewCell.xib in Resources */,
+				4644387F20739BB700EA47F4 /* OeditViewController.xib in Resources */,
 				46043241205694C700F0B627 /* TestingViewController.xib in Resources */,
 				46D0D430204D456100AC1E8B /* btn_test_icon_ipad@2x.png in Resources */,
 				46D0D3E4204D1D6200AC1E8B /* Main.storyboard in Resources */,
 				4604324720576BED00F0B627 /* TestTableViewCell.xib in Resources */,
+				4656048120721FB500567751 /* classViewController.xib in Resources */,
 				46E71527204FFF72009C8554 /* SchoolMViewController.xib in Resources */,
 				46D0D437204D515700AC1E8B /* bg_home_img.png in Resources */,
 			);
@@ -698,41 +841,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4644388220739E9000EA47F4 /* OeditViewController.m in Sources */,
 				4604323B20565D3B00F0B627 /* ResAnswerModel.m in Sources */,
 				4604324620576BED00F0B627 /* TestTableViewCell.m in Sources */,
+				4656048720722A4500567751 /* ClassModel+CoreDataProperties.m in Sources */,
 				46D0D4A3204ED3C300AC1E8B /* QtittleModel+CoreDataProperties.m in Sources */,
 				46E7152B204FFFE0009C8554 /* BaseMViewController.m in Sources */,
 				46D0D489204E8D9D00AC1E8B /* NSArray+Extended.m in Sources */,
 				46D0D41F204D3E8400AC1E8B /* JKMainViewController.m in Sources */,
 				46E7151F204FFA88009C8554 /* OrgMViewController.m in Sources */,
 				46043229205256BB00F0B627 /* BeginAnViewController.m in Sources */,
+				4656048B20723D7A00567751 /* TestManagerViewController.m in Sources */,
+				465604902073281A00567751 /* objectTableViewCell.m in Sources */,
 				4604323A20565D3B00F0B627 /* RestittleModel+CoreDataProperties.m in Sources */,
 				46D0D45D204E73E200AC1E8B /* QMlistTableViewCell.m in Sources */,
 				46D0D44B204D693D00AC1E8B /* JKCoreDataManager.m in Sources */,
 				46E7153820514B1F009C8554 /* MBProgressHUD.m in Sources */,
 				46D0D466204E7D9600AC1E8B /* QlistModel+CoreDataProperties.m in Sources */,
+				4644389C207B50C100EA47F4 /* BaseCountViewController.m in Sources */,
 				4604323920565D3B00F0B627 /* RestittleModel.m in Sources */,
 				46D0D465204E7D9600AC1E8B /* QlistModel.m in Sources */,
 				46D0D4AD204EDC3000AC1E8B /* QanswerModel.m in Sources */,
+				464438A1207B50E800EA47F4 /* objectCountViewController.m in Sources */,
 				46D0D440204D61BB00AC1E8B /* JKbase+CoreDataProperties.m in Sources */,
 				4604323C20565D3B00F0B627 /* ResAnswerModel+CoreDataProperties.m in Sources */,
+				46443897207B509F00EA47F4 /* schoolCountViewController.m in Sources */,
+				464438A7207B517100EA47F4 /* MCTableViewCell.m in Sources */,
 				46E71526204FFF72009C8554 /* SchoolMViewController.m in Sources */,
+				46443892207A265100EA47F4 /* MCountViewController.m in Sources */,
 				46D0D3E1204D1D6200AC1E8B /* ViewController.m in Sources */,
 				46D0D49B204E9D7500AC1E8B /* QCreateViewController.m in Sources */,
 				46CC3942206A2080007AD5F1 /* choiceTableViewCell.m in Sources */,
 				46D0D448204D63BC00AC1E8B /* CoreDataManager.m in Sources */,
+				4656049C2073778300567751 /* QobjectModel+CoreDataProperties.m in Sources */,
 				46D0D4AE204EDC3000AC1E8B /* QanswerModel+CoreDataProperties.m in Sources */,
+				4656048620722A4500567751 /* ClassModel.m in Sources */,
+				4656049520734A7800567751 /* OmanagerViewController.m in Sources */,
 				46D0D488204E8D9D00AC1E8B /* JSON+Helpers.m in Sources */,
 				46D0D3E7204D1D6200AC1E8B /* ____.xcdatamodeld in Sources */,
 				4604323020562E8500F0B627 /* ResListModel+CoreDataProperties.m in Sources */,
 				46D0D458204E45DB00AC1E8B /* QMListViewController.m in Sources */,
 				46CC3947206A4CB3007AD5F1 /* countViewController.m in Sources */,
+				4656048020721FB500567751 /* classViewController.m in Sources */,
 				46D0D4B2204EE15D00AC1E8B /* QeditAViewController.m in Sources */,
+				4656047B2072171200567751 /* schoolTableViewCell.m in Sources */,
 				46D0D419204D233E00AC1E8B /* KBaseViewController.m in Sources */,
 				46D0D495204E99E200AC1E8B /* NSString+Category.m in Sources */,
 				46D0D4A2204ED3C300AC1E8B /* QtittleModel.m in Sources */,
 				46043240205694C700F0B627 /* TestingViewController.m in Sources */,
 				46D0D44F204E39F500AC1E8B /* QManagerViewController.m in Sources */,
+				4656049B2073778300567751 /* QobjectModel.m in Sources */,
 				46E7153220511DDB009C8554 /* SchoolModel+CoreDataProperties.m in Sources */,
 				4604322F20562E8500F0B627 /* ResListModel.m in Sources */,
 				46D0D3EF204D1D6200AC1E8B /* main.m in Sources */,
@@ -740,6 +898,8 @@
 				46D0D3DE204D1D6200AC1E8B /* AppDelegate.m in Sources */,
 				46D0D43F204D61BB00AC1E8B /* JKbase.m in Sources */,
 				46E7153120511DDB009C8554 /* SchoolModel.m in Sources */,
+				464438882074CC8A00EA47F4 /* MyTool.m in Sources */,
+				4644388D2079BAEB00EA47F4 /* studentSetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +968,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -815,6 +976,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -863,6 +1025,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -870,6 +1033,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -906,7 +1070,7 @@
 				DEVELOPMENT_TEAM = F3V83AWC23;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/工具/MyHeader.pch";
 				INFOPLIST_FILE = "问卷研学/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyJiaKang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -922,7 +1086,7 @@
 				DEVELOPMENT_TEAM = F3V83AWC23;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/工具/MyHeader.pch";
 				INFOPLIST_FILE = "问卷研学/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MyJiaKang;
 				PRODUCT_NAME = "$(TARGET_NAME)";

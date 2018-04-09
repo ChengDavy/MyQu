@@ -57,7 +57,7 @@
 //    _schoolNameArry = [[NSMutableArray alloc]init];
     _quArry = [[NSMutableArray alloc]init];
 //    _quNameArry = [[NSMutableArray alloc]init];
-    // Do any additional setup after loading the view from its nib.
+   
     [self crateView];
     [self createData];
 }
@@ -90,45 +90,46 @@
 //选择基点
 - (IBAction)selectbase:(id)sender {
 
-    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择基地" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增基地" otherButtonTitles:nil];
-    
-    for (JKbase * baseModel in _baseArry) {
-        NSString * name = baseModel.baseName;
-        [myAction addButtonWithTitle:name];
-    }
-    myAction.tag = 1111;
-    
-    myAction.delegate =self;
-    [myAction showInView:self.view];
+//    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择基地" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增基地" otherButtonTitles:nil];
+//
+//    for (JKbase * baseModel in _baseArry) {
+//        NSString * name = baseModel.baseName;
+//        [myAction addButtonWithTitle:name];
+//    }
+//    myAction.tag = 1111;
+//
+//    myAction.delegate =self;
+//    [myAction showInView:self.view];
     
 }
 //选择学校
 - (IBAction)selectSchool:(id)sender {
-    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择学校" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增学校" otherButtonTitles:nil];
     
-    for (SchoolModel * Model in _schoolArry) {
-        NSString * name = Model.qSName;
-        [myAction addButtonWithTitle:name];
-    }
-
-    myAction.tag = 2222;
-    myAction.delegate =self;
-    [myAction showInView:self.view];
+//    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择学校" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增学校" otherButtonTitles:nil];
+//
+//    for (SchoolModel * Model in _schoolArry) {
+//        NSString * name = Model.qSName;
+//        [myAction addButtonWithTitle:name];
+//    }
+//
+//    myAction.tag = 2222;
+//    myAction.delegate =self;
+//    [myAction showInView:self.view];
     
 }
 //选择试题
 - (IBAction)selectQu:(id)sender {
     
-    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择学校" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增学校" otherButtonTitles:nil];
-    
-    for (QlistModel * Model in _quArry) {
-        NSString * name = Model.qTittle;
-        [myAction addButtonWithTitle:name];
-    }
-
-    myAction.tag = 3333;
-    myAction.delegate =self;
-    [myAction showInView:self.view];
+//    UIActionSheet * myAction = [[UIActionSheet alloc]initWithTitle:@"选择学校" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"新增学校" otherButtonTitles:nil];
+//
+//    for (QlistModel * Model in _quArry) {
+//        NSString * name = Model.qTittle;
+//        [myAction addButtonWithTitle:name];
+//    }
+//
+//    myAction.tag = 3333;
+//    myAction.delegate =self;
+//    [myAction showInView:self.view];
     
 }
 //开始测试
@@ -173,15 +174,14 @@
         ResListModel * model = [[JKCoreDataManager shareInstance]efCreateResListModel];
         
         model.qID = [NSString getStrArc4randomWithSize:16];
-        
-        model.qSchoolID = _schoolID;
-        model.qSchoolTittle = _schoolLa.text;
-        model.qBaseID = _baseID;
-        model.qBaseName = _baseLa.text;
-        model.qQuID = _quID;
-        model.qQuTittle = _quLa.text;
-        model.qClassID = _classLa.text;
-        model.qName = _nameLa.text;
+        model.qSchoolID = self->_schoolID;
+        model.qSchoolTittle = self->_schoolLa.text;
+        model.qBaseID = self->_baseID;
+        model.qBaseName = self->_baseLa.text;
+        model.qQuID = self->_quID;
+        model.qQuTittle = self->_quLa.text;
+        model.qClassID = self->_classLa.text;
+        model.qName = self->_nameLa.text;
         model.qTime = [NSDate date];
         [[JKCoreDataManager shareInstance]efAddResListModel:model];
         
@@ -237,60 +237,58 @@
 
     }
     
-    
-    
+  
 }
 - (IBAction)endEd:(id)sender {
     [self.view endEditing:YES];
 }
 
 //action
--(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    NSLog(@"buttonIndex   %ld",buttonIndex);
-    
-    if (actionSheet.tag==1111) {
-        if (buttonIndex==0) {
-        
-            BaseMViewController * baseM =[[BaseMViewController alloc]init];
-            [self presentViewController:baseM animated:YES completion:nil];
-            
-        }else{
-            
-            JKbase * model = [_baseArry objectAtIndexWithSafety:buttonIndex-2];
-            _baseLa.text = model.baseName;
-            _baseID = model.qID;
-        }
-        
-    }else if (actionSheet.tag ==2222 ){
-        if (buttonIndex==0) {
-            
-            SchoolMViewController * schoolM =[[SchoolMViewController alloc]init];
-            [self presentViewController:schoolM animated:YES completion:nil];
-            
-        }else{
-            
-            SchoolModel * model = [_schoolArry objectAtIndexWithSafety:buttonIndex-2];
-            _schoolLa.text = model.qSName;
-            _schoolID = model.qID;
-            
-        }
-  
-    }else if (actionSheet.tag ==3333 ){
-        if (buttonIndex==0) {
-            
-            QMListViewController * qM =[[QMListViewController alloc]init];
-            [self presentViewController:qM animated:YES completion:nil];
-            
-        }else{
-            
-            QlistModel * model = [_quArry objectAtIndexWithSafety:buttonIndex-2];
-            _quLa.text = model.qTittle;
-            _quID = model.qID;
-            
-        }
-        
-    }
-}
+//-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+//
+//    if (actionSheet.tag==1111) {
+//        if (buttonIndex==0) {
+//
+//            BaseMViewController * baseM =[[BaseMViewController alloc]init];
+//            [self presentViewController:baseM animated:YES completion:nil];
+//
+//        }else{
+//
+//            JKbase * model = [_baseArry objectAtIndexWithSafety:buttonIndex-2];
+//            _baseLa.text = model.baseName;
+//            _baseID = model.qID;
+//        }
+//
+//    }else if (actionSheet.tag ==2222 ){
+//        if (buttonIndex==0) {
+//
+//            SchoolMViewController * schoolM =[[SchoolMViewController alloc]init];
+//            [self presentViewController:schoolM animated:YES completion:nil];
+//
+//        }else{
+//
+//            SchoolModel * model = [_schoolArry objectAtIndexWithSafety:buttonIndex-2];
+//            _schoolLa.text = model.qSName;
+//            _schoolID = model.qID;
+//
+//        }
+//
+//    }else if (actionSheet.tag ==3333 ){
+//        if (buttonIndex==0) {
+//
+//            QMListViewController * qM =[[QMListViewController alloc]init];
+//            [self presentViewController:qM animated:YES completion:nil];
+//
+//        }else{
+//
+//            QlistModel * model = [_quArry objectAtIndexWithSafety:buttonIndex-2];
+//            _quLa.text = model.qTittle;
+//            _quID = model.qID;
+//
+//        }
+//
+//    }
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

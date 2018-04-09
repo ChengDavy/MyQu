@@ -345,13 +345,6 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     
     [formatter setDateFormat:@"yyyy-MM-dd"];
-//    NSInteger currentYear=[formatter stringFromDate:date] ;
-//    [formatter setDateFormat:@"MM"];
-//    NSInteger currentMonth=[[formatter stringFromDate:date]integerValue];
-//    [formatter setDateFormat:@"dd"];
-//    NSInteger currentDay=[[formatter stringFromDate:date] integerValue];
-    
-//    NSLog(@"currentDate = %@ ,year = %ld ,month=%ld, day=%ld",date,currentYear,currentMonth,currentDay);
     
     return [formatter stringFromDate:date];
 }

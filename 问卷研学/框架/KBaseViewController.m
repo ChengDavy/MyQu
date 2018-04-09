@@ -36,9 +36,19 @@
 }
 - (void)showAlertViewStr:(NSString *)str
 {
-    UIAlertView * alertView=[[UIAlertView alloc]initWithTitle:@"提示" message:str delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+  
+    UIAlertController * myalert = [UIAlertController alertControllerWithTitle:@"提示" message:str preferredStyle:UIAlertControllerStyleAlert];
     
-    [alertView show];
+    [myalert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [myalert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [self presentViewController:myalert animated:YES completion:nil];
+    
+    
 }
 
 //设置圆角

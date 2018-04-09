@@ -8,6 +8,7 @@
 
 #import "QManagerViewController.h"
 #import "QMListViewController.h"
+#import "countViewController.h"
 
 @interface QManagerViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *mButton;
@@ -42,7 +43,9 @@
 }
 //问卷统计
 - (IBAction)qChecker:(id)sender {
+    countViewController * count = [[countViewController alloc]init];
     
+    [self presentViewController:count animated:YES completion:nil];
     
 }
 

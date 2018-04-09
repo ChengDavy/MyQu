@@ -1,22 +1,23 @@
 //
-//  SchoolMViewController.m
+//  classViewController.m
 //  问卷研学
 //
-//  Created by 程党威 on 2018/3/7.
+//  Created by 程党威 on 2018/4/2.
 //  Copyright © 2018年 程党威. All rights reserved.
 //
 
-#import "SchoolMViewController.h"
-#import "schoolTableViewCell.h"
 #import "classViewController.h"
+#import "QMlistTableViewCell.h"
 #import "JKCoreDataManager.h"
 
-@interface SchoolMViewController ()<UITableViewDelegate,UITableViewDataSource>{
+@interface classViewController ()<UITableViewDelegate,UITableViewDataSource>{
     NSMutableArray  * _ListArry;
-    SchoolModel * _editModel;    // 编辑model
+    ClassModel * _editModel;    // 编辑model
+    SchoolModel * _schoolModel;   // 学校model
     NSString * _addID;
     
 }
+
 @property (weak, nonatomic) IBOutlet UIView *editBack;
 @property (weak, nonatomic) IBOutlet UIView *back1;
 @property (weak, nonatomic) IBOutlet UIView *back2;
@@ -25,15 +26,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *deBu;
 @property (weak, nonatomic) IBOutlet UIButton *enBU;
 @property (weak, nonatomic) IBOutlet UIButton *cancelBU;
-@property (weak, nonatomic) IBOutlet UITextField *name;
-@property (weak, nonatomic) IBOutlet UITextField *sheng;
-@property (weak, nonatomic) IBOutlet UITextField *shi;
-@property (weak, nonatomic) IBOutlet UITextField *notice;
 @property (weak, nonatomic) IBOutlet UITableView *myTableview;
 
 @end
 
-@implementation SchoolMViewController
+@implementation classViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,35 +49,29 @@
     [self setlayercornerRadius:_deBu Radius:5];
     [self setlayercornerRadius:_back4 Radius:10];
     
-    [_myTableview registerNib:[UINib nibWithNibName:@"schoolTableViewCell" bundle:nil] forCellReuseIdentifier:@"schoolTableViewCell"];
+    [_myTableview registerNib:[UINib nibWithNibName:@"QMlistTableViewCell" bundle:nil] forCellReuseIdentifier:@"QMlistTableViewCell"];
 }
 - (void)createData{
-    _ListArry = [[[JKCoreDataManager shareInstance]efGetAllSchoolModel] mutableCopy];
+    _schoolModel = [[JKCoreDataManager shareInstance]efGetSchoolModelWithSchoolModelId :_schoolID];
+    
+    _ListArry = [[[JKCoreDataManager shareInstance]efGetAllClassModelWith:_schoolID] mutableCopy];
     [_myTableview reloadData];
 }
 - (void)clearEd{
     //清空编辑框
     
-    _name.text = @"";
-    _sheng.text = @"";
-    _shi.text = @"";
+    _className.text = @"";
+    _school.text = @"";
+    _fuzer.text = @"";
     _notice.text = @"";
     
 }
-- (IBAction)add:(id)sender {
-    
-    _editModel = [[JKCoreDataManager shareInstance]efCreateSchoolModel];
-    _editModel.qID = [NSString getStrArc4randomWithSize:16];
-    _editBack.hidden=NO;
-    _addID = _editModel.qID;
-    [self clearEd];
-    [_name becomeFirstResponder];
-    
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-- (IBAction)back:(id)sender {
-      [self dismissViewControllerAnimated:YES completion:nil];
-    
-}
+
 - (IBAction)delete:(id)sender {
     
     UIAlertController * myalert = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除" preferredStyle:UIAlertControllerStyleAlert];
@@ -89,44 +80,32 @@
         
     }]];
     [myalert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-       
-        [[JKCoreDataManager shareInstance]efDeleteSchoolModel:self->_editModel];
+ 
+        [[JKCoreDataManager shareInstance]efDeleteClassModel:self-> _editModel];
         [self clearEd];
         self->_editBack.hidden=YES;
         self->_addID = @"";
-        
         [self createData];
         [self.view endEditing:YES];
         [self showHUDWithStr:@"删除成功"];
-
         
     }]];
     [self
      presentViewController:myalert animated:YES completion:nil];
-
     
 }
-- (IBAction)upload:(id)sender {
-    if (_name.text.length<1) {
-        [self showHUDWithStr:@"学校不能为空"];
-        return;
-    }
-    if (_sheng.text.length<1) {
-        [self showHUDWithStr:@"省份不能为空"];
-        return;
-        
-    }
-    if (_shi.text.length<1) {
-        [self showHUDWithStr:@"城市不能为空"];
+
+- (IBAction)updata:(id)sender {
+    if (_className.text.length<1) {
+        [self showHUDWithStr:@"班级不能为空"];
         return;
     }
     
-    _editModel.qSName = _name.text;
-    _editModel.qShen = _sheng.text;
-    _editModel.qShi = _shi.text;
-    _editModel.qQu = _notice.text;
+    _editModel.name = _className.text;
+    _editModel.manager = _fuzer.text;
+    _editModel.notice = _notice.text;
     
-    [[JKCoreDataManager shareInstance]efAddSchoolModel:_editModel];
+    [[JKCoreDataManager shareInstance]efAddClassModel: _editModel];
     _editBack.hidden =YES;
     _addID = @"";
     [self clearEd];
@@ -135,19 +114,35 @@
     [self.view endEditing:YES];
     
 }
+
 - (IBAction)cancel:(id)sender {
+    
     if ([_addID isEqualToString:_editModel.qID]) {
         [self delete:nil];
     }else{
-    [self clearEd];
-    _editBack.hidden=YES;
+        [self clearEd];
+        _editBack.hidden=YES;
     }
-     [self.view endEditing:YES];
+    [self.view endEditing:YES];
+    
 }
 - (IBAction)tapenEdit:(id)sender {
+    
     [self.view endEditing:YES];
 }
-
+- (IBAction)addClass:(id)sender {
+    
+    _editModel = [[JKCoreDataManager shareInstance]efCreateClassModel];
+    _editModel.sID = _schoolID;
+    _editModel.qID = [NSString getStrArc4randomWithSize:16];
+    _editBack.hidden=NO;
+    _addID = _editModel.qID;
+    [self clearEd];
+    
+     _school.text = _schoolModel.qSName;
+    [_className becomeFirstResponder];
+    
+}
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
     
@@ -166,11 +161,11 @@
     
     addbutton.frame = CGRectMake(200, 10, 368, 60);
     
-    [addbutton setTitle:@"新增学校" forState:UIControlStateNormal];
+    [addbutton setTitle:@"新增班级" forState:UIControlStateNormal];
     
     [addbutton setBackgroundColor:UIColorFromRGB(0x719c1c)];
     [self setlayercornerRadius:addbutton Radius:5];
-    [addbutton addTarget:self action:@selector(add:) forControlEvents:UIControlEventTouchUpInside];
+    [addbutton addTarget:self action:@selector(addClass:) forControlEvents:UIControlEventTouchUpInside];
     
     [view addSubview:addbutton];
     
@@ -182,49 +177,38 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    schoolTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"schoolTableViewCell"];
+    QMlistTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"QMlistTableViewCell"];
     if (cell== nil) {
-        cell = [[schoolTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"schoolTableViewCell"];
+        cell = [[QMlistTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"QMlistTableViewCell"];
     }
-
-    SchoolModel * model = [_ListArry objectAtIndex: indexPath.row];
-    cell.ClassBu.tag = 10 + indexPath.row;
-    [cell.ClassBu addTarget:self action:@selector(classMan:) forControlEvents:UIControlEventTouchUpInside];
     
-    cell.tittle.text = model.qSName;
-    cell.time.text = [NSString stringWithFormat:@"%@%@",model.qShen,model.qShi];
+    ClassModel * model = [_ListArry objectAtIndex: indexPath.row];
+    
+    cell.tittle.text = model.name;
+    cell.time.text = [NSString stringWithFormat:@"%@",_schoolModel.qSName];
     
     return cell;
-}
-
--(void)classMan:(UIButton*)bu{
-    classViewController * classManager = [[classViewController alloc]init];
-    
-    SchoolModel * model = [_ListArry objectAtIndex: bu.tag-10];
-    
-    classManager.schoolID = model.qID;
-    
-    [self presentViewController:classManager animated:YES completion:nil];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    SchoolModel * model = [_ListArry objectAtIndex: indexPath.row];
-    _name.text = model.qSName;
-    _sheng.text = model.qShen;
-    _shi.text = model.qShi;
-    _notice.text = model.qQu;
+    ClassModel * model = [_ListArry objectAtIndex: indexPath.row];
+    _className.text = model.name;
+    _school.text = _schoolModel.qSName;
+    _fuzer.text = model.manager;
+    _notice.text = model.notice;
     _editModel = model;
     
     _editBack.hidden=NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)back:(id)sender {
+     [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
+
 
 /*
 #pragma mark - Navigation

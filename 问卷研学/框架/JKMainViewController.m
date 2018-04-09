@@ -11,6 +11,7 @@
 #import "QManagerViewController.h"
 #import "OrgMViewController.h"
 #import "BeginAnViewController.h"
+#import "TestManagerViewController.h"
 
 @interface JKMainViewController ()
 
@@ -28,7 +29,9 @@
 //开始测试
 - (IBAction)begin:(id)sender {
     
-    BeginAnViewController * beginAn = [[BeginAnViewController alloc]init];
+//    BeginAnViewController * beginAn = [[BeginAnViewController alloc]init];
+    
+    TestManagerViewController * beginAn = [[TestManagerViewController alloc]init];
     
     [self presentViewController:beginAn animated:YES completion:nil];
     

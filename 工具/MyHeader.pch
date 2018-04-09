@@ -10,6 +10,8 @@
 #define MyHeader_pch
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "JSON+Helpers.h"
+#import "MyTool.h"
 
 #import "Tools.h"
 ////数据库管理
@@ -32,14 +34,19 @@
 #import "QanswerModel.h"
 // 学校表
 #import "SchoolModel.h"
+// 班级表
+#import "ClassModel.h"
 // 基地表
 #import "JKbase.h"
+// 项目表
+#import "QobjectModel.h"
 // 已答题表
 #import "ResListModel.h"
 // 已答题目表
 #import "RestittleModel.h"
 // 已答答案表
 #import "ResAnswerModel.h"
+
 
 
 #pragma mark - 全局量

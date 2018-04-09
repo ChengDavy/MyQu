@@ -17,13 +17,18 @@
 
 #define KSchoolModel  @"SchoolModel"     //学校表
 
+#define KClassModel   @"ClassModel"   //班级表
+
 #define KJKbase  @"JKbase"               //基地表
 
 #define KResListModel  @"ResListModel"   //已答问题表
 
-#define KRestittleModel  @"RestittleModel"  //已答题目
+#define KRestittleModel  @"RestittleModel"  // 已答题目
 
-#define KResAnswerModel  @"ResAnswerModel"  //已答答案表
+#define KResAnswerModel  @"ResAnswerModel"  // 已答答案表
+
+#define KQobjectModel @"QobjectModel"   // 测试项目表
+
 
 
 @interface JKCoreDataManager : NSObject
@@ -429,6 +434,14 @@
 
 
 /**
+ *  筛选查询
+ *  @ 查询字段  base   school  class  object
+ *  @ return
+ */
+
+-(NSMutableArray *)efSearchAllResListModelWithBaseID:(NSString*)baseID SchoolID:(NSString*)schoolID ClassID:(NSString*)classID ObjectID:(NSString*)objectID;
+
+/**
  *  模糊查询
  *  @ 模糊查询字段
  *  @ return
@@ -615,6 +628,177 @@
  */
 -(BOOL)efDeleteAllResAnswerModel;
 
+#pragma mark - 班级表
 
+//==============================================================================
+/*班级表*/
+//==============================================================================
+/**
+ *  创建班级表信息
+ *
+ *  @return ClassModel
+ */
+-(ClassModel*)efCreateClassModel;
+/**
+ *  获取所有班级表
+ *
+ *  @return studentModel
+ */
+-(NSMutableArray*)efGetAllClassModel;
+
+/**
+ *  添加班级表到数据库
+ *
+ */
+-(BOOL)efAddClassModel:(ClassModel *)jClassModel;
+
+/**
+ *  根据班级表ID获取班级表
+ *  @ 班级表ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllClassModelWith:(NSString*)modelId;
+
+
+/**
+ *  模糊查询
+ *  @ 模糊查询字段
+ *  @ return
+ */
+-(NSMutableArray *)efSearchAllClassModelWithsearchText:(NSString*)searchText;
+
+/**
+ *  根据ClassModelID获取ClassModel信息
+ *
+ *  @ ClassModelId
+ *
+ *  @ return
+ */
+-(ClassModel *)efGetClassModelWithClassModelId:(NSString *)modelId;
+
+/**
+ *  删除班级表信息
+ *
+ *  @ param ClassModel
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteClassModel:(ClassModel *)jClassModel;
+
+/**
+ *  更新班级表信息
+ *
+ *  @ param ClassModel
+ *
+ *  @ return
+ */
+-(BOOL)efUpdateClassModel:(ClassModel *)jClassModel;
+
+/**
+ *  清空所有班级表
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteAllClassModel;
+
+#pragma mark - 项目表
+
+//==============================================================================
+/*项目表*/
+//==============================================================================
+/**
+ *  创建项目表信息
+ *
+ *  @return QobjectModel
+ */
+-(QobjectModel*)efCreateQobjectModel;
+/**
+ *  获取所有项目表
+ *
+ *  @return studentModel
+ */
+-(NSMutableArray*)efGetAllQobjectModel;
+
+/**
+ *  添加项目表到数据库
+ *
+ */
+-(BOOL)efAddQobjectModel:(QobjectModel *)jQobjectModel;
+
+
+/**
+ *  根据班级ID获取项目表
+ *  @ 班级ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithClassId:(NSString*)ClassId;
+
+
+/**
+ *  根据项目表ID获取项目表
+ *  @ 项目表ID
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWith:(NSString*)modelId;
+/**
+ *  根据项目表ID获取是否使用项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithqUSE:(BOOL)use;
+/**
+ *  根据项目表ID获取是否隐藏项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithHidden:(BOOL)hidden;
+
+/**
+ *  根据项目表ID获取未是否删除项目表
+ *  @ 项目表ID  qHidden;   qDelete;  qUSE;
+ *  @ return
+ */
+-(NSMutableArray *)efGetAllQobjectModelWithDelete:(BOOL)isdelete;
+
+/**
+ *  模糊查询
+ *  @ 模糊查询字段
+ *  @ return
+ */
+-(NSMutableArray *)efSearchAllQobjectModelWithsearchText:(NSString*)searchText;
+
+/**
+ *  根据QobjectModelID获取QobjectModel信息
+ *
+ *  @ QobjectModelId
+ *
+ *  @ return
+ */
+-(QobjectModel *)efGetQobjectModelWithQobjectModelId:(NSString *)modelId;
+
+/**
+ *  删除项目表信息
+ *
+ *  @ param QobjectModel
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteQobjectModel:(QobjectModel *)jQobjectModel;
+
+/**
+ *  更新项目表信息
+ *
+ *  @ param QobjectModel1
+ *
+ *  @ return
+ */
+-(BOOL)efUpdateQobjectModel:(QobjectModel *)jQobjectModel;
+
+/**
+ *  清空所有项目表
+ *
+ *  @ return
+ */
+-(BOOL)efDeleteAllQobjectModel;
 
 @end
